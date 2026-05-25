@@ -3,20 +3,67 @@
 This project demonstrates three core types of automated tests commonly used in modern QA engineering: **UI Navigation**, **Form Interaction**, and **API + UI Integration**. Together, these represent a balanced, real‑world automation strategy used across SaaS, fintech, healthcare, e‑commerce, and enterprise applications.
 
 ---
+# ▶️ How to Run the Playwright Tests
 
-## ▶️ How to Run the Playwright Tests
+# 1. Activate your virtual environment
+`.\.venv\Scripts\Activate.ps1`
 
-Activate your venv:
-  `.\.venv\Scripts\Activate.ps1`
+# 2. Move into the Playwright project folder
+`cd playwright`
 
-cd into the `playwright` folder, 
+# ------------------------------------------------------------
+# ⭐ Standard Test Run (Headless)
+# Runs fast with no visible browser. Ideal for CI pipelines and quick checks.
+`pytest -s`
 
-then run:
-`pytest -s` 
-or 
-`pytest -s --headed` 
+# ------------------------------------------------------------
+# ⭐ Headed Mode (Watch the Browser Work)
+# Opens a real browser window so you can visually watch the automation click,
+# type, navigate, and interact with the UI. Great for debugging.
+`pytest -s --headed`
 
----
+# ------------------------------------------------------------
+# ⭐ Run With Tracing Enabled
+# Records a full trace of each test: DOM snapshots, network calls, console logs,
+# and a step-by-step replay you can open later. Perfect for debugging failures.
+`pytest -s --headed --tracing=on`
+
+# ------------------------------------------------------------
+# ⭐ Opening Trace Files
+# After running with tracing enabled, Playwright stores traces in:
+# playwright/test-results/<test-folder>/trace.zip
+# Each test gets its own folder, which prevents overwriting.
+
+# Use these commands to open the actual trace files:
+
+`python -m playwright show-trace "test-results/tests-test-basic-navigation-py-test-homepage-title-chromium/trace.zip"`
+
+`python -m playwright show-trace "test-results/tests-test-form-interaction-py-test-search-box-chromium/trace.zip"`
+
+`python -m playwright show-trace "test-results/tests-test-api-and-ui-py-test-api-drives-ui-chromium/trace.zip"`
+
+# ------------------------------------------------------------
+# ⭐ What These Outputs Do
+
+# Headless Mode:
+#   - Fastest execution
+#   - No visible browser
+#   - Best for pipelines and automation
+
+# Headed Mode:
+#   - Opens a real browser window
+#   - Lets you watch the automation run in real time
+#   - Useful for debugging and demos
+
+# Trace Files:
+#   - Saved as trace.zip inside each test-results folder
+#   - Opened with `playwright show-trace`
+#   - Provides a full replay of the test:
+#       • DOM snapshots
+#       • Network requests
+#       • Console logs
+#       • Timeline of actions
+#   - Essential for diagnosing failures or understanding test behavior
 
 ## 🧭 1. UI Navigation Tests
 
