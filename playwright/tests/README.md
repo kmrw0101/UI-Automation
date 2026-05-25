@@ -9,9 +9,12 @@ This project demonstrates three core types of automated tests commonly used in m
 Activate your venv:
   `.\.venv\Scripts\Activate.ps1`
 
-cd into the `playwright` folder, then run:
+cd into the `playwright` folder, 
 
-pytest -s
+then run:
+pytest -s 
+or 
+pytest -s --headed 
 
 ---
 
