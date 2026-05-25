@@ -4,6 +4,14 @@ This project demonstrates three core types of automated tests commonly used in m
 
 ---
 
+## ▶️ How to Run the Playwright Tests
+
+Activate your venv, cd into the `playwright` folder, then run:
+
+pytest -s
+
+---
+
 ## 🧭 1. UI Navigation Tests
 
 **Purpose:**  
