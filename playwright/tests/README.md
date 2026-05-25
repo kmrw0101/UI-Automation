@@ -12,9 +12,9 @@ Activate your venv:
 cd into the `playwright` folder, 
 
 then run:
-pytest -s 
+`pytest -s` 
 or 
-pytest -s --headed 
+`pytest -s --headed` 
 
 ---
 
