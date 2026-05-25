@@ -13,24 +13,24 @@ This project demonstrates three core types of automated tests commonly used in m
 `cd playwright`
 
 ------------------------------------------------------------
-Standard Test Run (Headless)  
+**Standard Test Run (Headless)**  
 Runs fast with no visible browser. Ideal for CI pipelines and quick checks.  
 `pytest -s`
 
 ------------------------------------------------------------
-Headed Mode (Watch the Browser Work)  
+**Headed Mode (Watch the Browser Work)**  
 Opens a real browser window so you can visually watch the automation click,  
 type, navigate, and interact with the UI. Great for debugging.  
 `pytest -s --headed`
 
 ------------------------------------------------------------
-Run With Tracing Enabled  
+**Run With Tracing Enabled**  
 Records a full trace of each test: DOM snapshots, network calls, console logs,  
 and a step-by-step replay you can open later. Perfect for debugging failures.  
 `pytest -s --headed --tracing=on`
 
 ------------------------------------------------------------
-Opening Trace Files  
+**Opening Trace Files**  
 After running with tracing enabled, Playwright stores traces in:  
 `playwright/test-results/<test-folder>/trace.zip`  
 Each test gets its own folder, which prevents overwriting.
@@ -42,19 +42,19 @@ Use these commands to open the actual trace files:
 `python -m playwright show-trace "test-results/tests-test-api-and-ui-py-test-api-drives-ui-chromium/trace.zip"`
 
 ------------------------------------------------------------
-What These Outputs Do
+**What These Outputs Do**
 
-Headless Mode:  
+**Headless Mode:**  
   - Fastest execution  
   - No visible browser  
   - Best for pipelines and automation  
 
-Headed Mode:  
+**Headed Mode:**  
   - Opens a real browser window  
   - Lets you watch the automation run in real time  
   - Useful for debugging and demos  
 
-Trace Files:  
+**Trace Files:**  
   - Saved as `trace.zip` inside each test-results folder  
   - Opened with `playwright show-trace`  
   - Provides a full replay of the test:  
@@ -67,68 +67,3 @@ Trace Files:
 ---
 
 ## 🧭 1. UI Navigation Tests
-
-**Purpose:**  
-Validate that key pages load correctly and the application is reachable.
-
-**What these tests do:**  
-- Navigate to a page  
-- Confirm the page loads  
-- Validate the title or a key element  
-
-**Why they matter:**  
-- Fast, reliable smoke tests  
-- Catch broken deployments immediately  
-- Ensure the application is “alive” before deeper tests run  
-
-**When to use:**  
-- CI/CD smoke checks  
-- Basic uptime validation  
-- Early detection of routing or deployment issues  
-
-**Example behaviors:**  
-- Opening the homepage  
-- Verifying the title  
-- Ensuring no critical errors appear  
-
----
-
-## 📝 2. Form Interaction Tests
-
-**Purpose:**  
-Validate that users can interact with UI elements and complete workflows.
-
-**What these tests do:**  
-- Fill input fields  
-- Click buttons  
-- Submit forms  
-- Validate navigation or results  
-
-**Why they matter:**  
-- Represent real user behavior  
-- Catch UI regressions early  
-- Validate selectors, inputs, and workflows  
-
-**When to use:**  
-- Login flows  
-- Search flows  
-- Checkout or multi‑step forms  
-- Any user‑driven interaction  
-
-**Example behaviors:**  
-- Typing into a search box  
-- Pressing Enter  
-- Confirming the resulting page is correct  
-
----
-
-## 🔗 3. API + UI Integration Tests
-
-**Purpose:**  
-Validate that backend data and frontend UI stay in sync — a critical part of real‑world QA.
-
-**What these tests do:**  
-- Call a backend API  
-- Extract data from the response  
-- Navigate the UI  
-- Confirm the UI displays the
